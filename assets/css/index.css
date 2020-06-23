@@ -9,20 +9,11 @@
     width: 30px;
     height: 30px;
     position: absolute;
-<<<<<<< HEAD
-    top: 235px;
-=======
     top: 200px;
->>>>>>> third
     left: 50%;
     transform: translateX(-50%);
     background: url(../images/birds.png);
     transition: top .3s linear;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> third
 }
 
 .start {
@@ -38,33 +29,6 @@
     transition: all .3s linear;
     cursor: pointer;
 }
-<<<<<<< HEAD
-.start.white {
-    color: #fff;
-    font-size: 24px;
-  }
-  
-  .start.blue {
-    color: #09f;
-    font-size: 36px;
-  }
-.score{
-    color: #fff;
-    font-size: 24px;
-    width:20px;
-    text-align: center;
-    margin:0 auto;
-}
-.mask {
-    
-    position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-=======
 
 .start.white {
     color: #fff;
@@ -94,7 +58,6 @@
     background-color: rgba(0, 0, 0, 0.7);
     display: none;
     z-index: 2;
->>>>>>> third
 }
 
 .end {
@@ -104,10 +67,7 @@
     transform: translateX(-50%);
     text-align: center;
     display: none;
-<<<<<<< HEAD
-=======
     z-index: 3;
->>>>>>> third
 }
 
 .end .gameover {
@@ -116,11 +76,7 @@
     color: red;
 }
 
-<<<<<<< HEAD
-.end .result, .end .number {
-=======
 .end .result, .end .final-score {
->>>>>>> third
     margin-top: 20px;
     color: #ff0;
     font-size: 20px;
@@ -143,32 +99,6 @@
 }
 
 .end .ranking .rank-item .rank-num {
-<<<<<<< HEAD
-    
-    display:inline-block;
-    width:14px;
-    height:14px;
-    line-height: 14px;;
-    text-align: center;
-    color:#ccc;
-    /* background-color: lightblue; */
-}
-.end .ranking .rank-item .rank-num.fir{
-    background-color: #f54545;
-}
-.end .ranking .rank-item .rank-num.sec{
-    background-color: #ff8547;
-}
-.end .ranking .rank-item .rank-num.thi{
-    background-color: #ffac38;
-}
-.end .ranking .rank-item .finalscore {
-    display: inline-block;
-    width:30px;
-    text-align: center;
-}
-
-=======
     display: inline-block;
     width: 14px;
     height: 14px;
@@ -232,4 +162,3 @@
     bottom: 0;
     background-image: url("../images/pipe1.png");
 }
->>>>>>> third

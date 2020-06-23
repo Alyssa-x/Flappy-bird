@@ -7,40 +7,26 @@ var bird = {
   startColor: "blue",
   startFlag: false,
   minTop: 0,
-<<<<<<< HEAD
-  maxtop: 570,
-=======
   maxTop: 570,
   pipeLength: 7,
   pipeArr: [],
   pipeLastIndex: 6,
   score: 0,
->>>>>>> third
 
   //初始化函数
   init: function () {
     this.initData();
     this.animate();
     this.handle();
-<<<<<<< HEAD
-
-  },
-  initData: function () {
-    this.el = document.getElementById("container");
-    this.oBird = this.el.getElementsByClassName("bird")[0]; //获取鸟的dom元素
-=======
   },
 
   initData: function () {
     this.el = document.getElementById("container");
     this.oBird = this.el.getElementsByClassName("bird")[0];
->>>>>>> third
     this.oStart = this.el.getElementsByClassName("start")[0];
     this.oScore = this.el.getElementsByClassName("score")[0];
     this.oMask = this.el.getElementsByClassName("mask")[0];
     this.oEnd = this.el.getElementsByClassName("end")[0];
-<<<<<<< HEAD
-=======
     this.oFinalScore = this.oEnd.getElementsByClassName("final-score")[0];
     this.oRankList = this.oEnd.getElementsByClassName("ranking")[0];
     this.oRestart = this.oEnd.getElementsByClassName("restart")[0];
@@ -52,7 +38,6 @@ var bird = {
     var scoreArr = getLocal("score");
     // 键值不存在 值为null
     return scoreArr ? scoreArr : [];
->>>>>>> third
   },
 
   //单一职责原则
@@ -64,44 +49,26 @@ var bird = {
       self.skyMove();
       if (self.startFlag) {
         self.birdDrop();
-<<<<<<< HEAD
-=======
         self.pipeMove();
->>>>>>> third
       }
       if (++count % 10 === 0) {
         if (!self.startFlag) {
           self.birdJump();
           self.startBound();
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> third
         self.birdFly(count);
       }
     }, 30);
   },
 
-<<<<<<< HEAD
-  //背景移动
-=======
   // 背景移动
->>>>>>> third
   skyMove: function () {
     this.skyPosition -= this.skyStep;
     this.el.style.backgroundPositionX = this.skyPosition + "px";
   },
-<<<<<<< HEAD
-
-  //小鸟跳跃
-  birdJump: function () {
-    this.birdTop = this.birdTop === 220 ? 250 : 220;
-=======
   // 小鸟跳跃
   birdJump: function () {
     this.birdTop = this.birdTop === 200 ? 230 : 200;
->>>>>>> third
     this.oBird.style.top = this.birdTop + "px";
   },
 
@@ -116,8 +83,6 @@ var bird = {
   birdDrop: function () {
     this.birdTop += ++this.birdStepY;
     this.oBird.style.top = this.birdTop + "px";
-<<<<<<< HEAD
-=======
     this.collision();
     this.addScore();
   },
@@ -151,7 +116,6 @@ var bird = {
       up: upHeight,
       down: downHeight,
     };
->>>>>>> third
   },
 
   // 开始按钮缩放
@@ -167,15 +131,6 @@ var bird = {
     this.collideBoundary();
     this.collidePipe();
   },
-<<<<<<< HEAD
-  collideBoundary: function () {
-    if (this.birdTop < this.minTop || this.birdTop > this.maxtop) {
-      console.log(this.birdTop);
-      this.gameOver();
-    }
-  },
-  collidePipe: function () {},
-=======
 
   collideBoundary: function () {
     if (this.birdTop < this.minTop || this.birdTop > this.maxTop) {
@@ -205,36 +160,16 @@ var bird = {
       this.oScore.innerText = ++this.score;
     }
   },
->>>>>>> third
 
   //监听所有事件
   handle: function () {
     this.handleStart();
-<<<<<<< HEAD
-=======
     this.handleClick();
     this.handleRestart();
->>>>>>> third
   },
 
   // 点击开始游戏
   handleStart: function () {
-<<<<<<< HEAD
-
-    var self = this;
-    this.oStart.onclick = function () {
-    
-      // console.log(this);
-      self.oStart.style.display = "none";
-      self.oBird.style.left = "80px";
-      self.skyStep = 5;
-      self.startFlag = true;
-
-    };
-    
-
-
-=======
     var self = this;
     this.oStart.onclick = function () {
       self.oStart.style.display = "none";
@@ -312,30 +247,16 @@ var bird = {
     var second = formatNum(d.getSeconds());
 
     return `${year}.${month}.${day} ${hour}:${minute}:${second}`;
->>>>>>> third
   },
 
   // 游戏结束
   gameOver: function () {
-<<<<<<< HEAD
-
-    clearInterval(this.timer);
-
-=======
     clearInterval(this.timer);
     this.setScore();
->>>>>>> third
     this.oMask.style.display = "block";
     this.oEnd.style.display = "block";
     this.oBird.style.display = "none";
     this.oScore.style.display = "none";
-<<<<<<< HEAD
-    
-  },
-};
-
-bird.init();
-=======
     this.oFinalScore.innerText = this.score;
 
     this.renderRankList();
@@ -380,4 +301,3 @@ bird.init();
     this.oRankList.innerHTML = template;
   },
 };
->>>>>>> third
